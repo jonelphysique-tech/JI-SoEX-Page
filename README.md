@@ -27,7 +27,7 @@ This repository serves as the official distribution hub for the JI-SoEX compiled
 
 ## 🌐 Official Website
 Visit the official landing page for more information and visual demonstrations:
-**[View the JI-SoEX Landing Page](https://jonelphysique-tech.github.io/JI-SoEX/)** *(Note: GitHub automatically updates this link)*
+**[View the JI-SoEX Landing Page]([https://jonelphysique-tech.github.io/JI-SoEX/](https://jonelphysique-tech.github.io/JI-SoEX-Page/))** *(Note: GitHub automatically updates this link)*
 
 ## ⚠️ License and Legal
 

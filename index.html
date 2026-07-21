@@ -112,7 +112,7 @@
     .trust-item strong{color:var(--green-dark);font-weight:normal;}
 
     /* SECTION HEADER */
-    section{padding:0 0 72px;}
+    section{padding:0 0 56px;}
     .section-header{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
     .section-header::before{content:'';display:block;width:4px;height:28px;background:var(--green);border-radius:2px;flex-shrink:0;}
     .section-title{font-family:var(--ui);font-weight:700;font-size:1.2rem;color:#0d1f12;letter-spacing:.08em;text-transform:uppercase;}
@@ -159,7 +159,8 @@
     .price-note{font-family:var(--mono);font-size:.58rem;color:var(--muted);letter-spacing:.07em;line-height:1.9;background:var(--bg3);border:1px solid var(--border);border-radius:5px;padding:14px 18px;}
 
     /* DOWNLOAD CARD */
-    .dl-hero-card{background:var(--panel);border:1px solid var(--border);border-radius:8px;overflow:hidden;position:relative;margin-bottom:22px;box-shadow:0 4px 24px rgba(26,154,74,.07);}
+    .dl-hero-card{background:var(--panel);border:1px solid var(--border);border-radius:8px;overflow:hidden;position:relative;margin-bottom:18px;box-shadow:0 4px 24px rgba(26,154,74,.07);}
+    .dl-hero-card:last-child{margin-bottom:0;}
     .dl-hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),#2ecc71,var(--green));background-size:200% 100%;animation:shimmer 3s linear infinite;}
     .dl-hero-card.dev::before{background:linear-gradient(90deg,#e0b050,#f0d9a8,#e0b050);animation:none;}
     .dl-hero-inner{display:grid;grid-template-columns:1fr auto;gap:40px;padding:38px 38px 34px;align-items:start;}
@@ -183,7 +184,10 @@
     .meta-label{font-family:var(--mono);font-size:.54rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;}
     .meta-value{font-family:var(--mono);font-size:.78rem;color:var(--green-dark);font-weight:bold;}
     .meta-value.dev{color:var(--amber);}
-    .dl-btns{display:flex;flex-direction:column;gap:12px;min-width:230px;}
+    /* Fixed width: the box image's intrinsic size must not drive the grid's
+       auto track, or the 1fr content column collapses to zero. */
+    .dl-btns{display:flex;flex-direction:column;gap:12px;width:230px;max-width:100%;}
+    @media(max-width:760px){.dl-btns{width:100%;}}
     .hash-box{font-family:var(--mono);font-size:.55rem;color:var(--muted);background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:9px 11px;max-width:520px;word-break:break-all;line-height:1.7;letter-spacing:.03em;}
     .hash-box span{color:var(--green-dark);}
     .dev-banner{display:flex;align-items:flex-start;gap:12px;background:var(--amber-lite);border:1px solid var(--amber-mid);border-radius:4px;padding:13px 16px;margin-bottom:20px;max-width:520px;}
@@ -496,17 +500,13 @@
     </div>
     <p class="section-lede">Real output from a live STAAD.Pro session. Click any image to enlarge.</p>
     <div class="shots-grid">
-      <div class="shot-wrap span2" data-full="assets/tools-footing-design.png" tabindex="0" role="button" aria-label="Enlarge isolated footing design screenshot">
+      <div class="shot-wrap" data-full="assets/tools-footing-design.png" tabindex="0" role="button" aria-label="Enlarge isolated footing design screenshot">
         <img src="assets/tools-footing-design.png" alt="Isolated Footing Design window with FEA bearing pressure map, utilization ratio table, and all design checks passing" width="1547" height="1000" loading="lazy" decoding="async">
-        <div class="shot-caption">ISOLATED FOOTING DESIGN · NSCP 2015 / ACI 318-14 · <b>FEA BEARING PRESSURE MAP</b> · PUNCHING, ONE-WAY SHEAR, FLEXURE &amp; STABILITY CHECKS · REBAR SCHEDULE · PRINT PDF</div>
+        <div class="shot-caption">ISOLATED FOOTING DESIGN · NSCP 2015 / ACI 318-14 · <b>FEA BEARING PRESSURE MAP</b> · PUNCHING, ONE-WAY SHEAR, FLEXURE &amp; STABILITY CHECKS · REBAR SCHEDULE</div>
       </div>
       <div class="shot-wrap" data-full="assets/tools-response-spectra.png" tabindex="0" role="button" aria-label="Enlarge response spectra screenshot">
         <img src="assets/tools-response-spectra.png" alt="Response Spectra window showing the UBC 97 and NSCP 2015 spectrum curve, control periods, and base shear results" width="1522" height="997" loading="lazy" decoding="async">
         <div class="shot-caption">RESPONSE SPECTRA · UBC 97 / NSCP 2015 · <b>SPECTRUM CURVE + BASE SHEAR</b> · GOVERNING V, CONTROL PERIODS, COPYABLE SPECTRUM POINTS</div>
-      </div>
-      <div class="shot-wrap" data-full="assets/tools-app.png" tabindex="0" role="button" aria-label="Enlarge main application window screenshot">
-        <img src="assets/tools-app.png" alt="JI-SoEX Tools main window with module tabs, Frame Generator panel, and activity log showing a connected STAAD.Pro model" width="377" height="880" loading="lazy" decoding="async">
-        <div class="shot-caption">MAIN PANEL · <b>FRAME GENERATOR</b> · MODULE TABS, ACTIVITY LOG, AND LIVE CONNECTION / LICENSE STATUS</div>
       </div>
     </div>
   </div>

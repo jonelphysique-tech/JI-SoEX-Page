@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JI-SoEX — Structural Design Suite</title>
+  <title>JI-SoEX — Structural Design Suite &amp; JI-SoEX Tools</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
@@ -195,6 +195,7 @@
     .dl-name{font-family:var(--ui);font-weight:700;font-size:1.8rem;color:#0d1f12;letter-spacing:.04em;margin-bottom:6px;}
     .dl-id{font-family:var(--mono);font-size:.62rem;color:var(--muted);letter-spacing:.1em;margin-bottom:18px;}
     .dl-desc{font-size:.95rem;color:#3d6646;line-height:1.7;max-width:520px;margin-bottom:22px;}
+    .dl-desc code{font-family:var(--mono);color:var(--green-dark);font-size:.86rem;background:var(--green-lite);padding:1px 6px;border-radius:2px;}
     .dl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;}
     .tag{font-family:var(--mono);font-size:.58rem;color:var(--muted);background:var(--bg3);border:1px solid var(--border);padding:2px 9px;border-radius:2px;letter-spacing:.06em;}
     .tag.hi{color:var(--green-dark);border-color:var(--green-mid);background:var(--green-lite);font-weight:600;}
@@ -208,6 +209,30 @@
     .btn-dl svg{width:16px;height:16px;flex-shrink:0;}
     .btn-dl.secondary{background:var(--panel);border:1px solid var(--border);color:var(--muted);font-size:.82rem;box-shadow:none;}
     .btn-dl.secondary:hover{border-color:var(--green-dim);color:var(--green);background:var(--green-lite);box-shadow:none;transform:translateY(-1px);}
+    .btn-dl.disabled{background:var(--bg3);border:1px dashed #b9cfc1;color:#93ad9c;box-shadow:none;cursor:not-allowed;pointer-events:none;}
+    .btn-dl.disabled:hover{background:var(--bg3);border-color:#b9cfc1;color:#93ad9c;box-shadow:none;transform:none;}
+    .btn-note{font-family:var(--mono);font-size:.56rem;color:var(--muted);letter-spacing:.08em;line-height:1.6;text-align:center;padding:0 4px;}
+
+    /* DEV / STATUS BADGES */
+    .dl-ver.dev{color:#a86a12;background:#fdf4e3;border-color:#f0d9a8;}
+    .meta-value.dev{color:#a86a12;}
+    .dev-banner{display:flex;align-items:center;gap:12px;background:#fdf4e3;border:1px solid #f0d9a8;border-radius:4px;padding:12px 16px;margin-bottom:22px;max-width:520px;}
+    .dev-banner svg{width:18px;height:18px;flex-shrink:0;stroke:#c98a1e;}
+    .dev-banner-text{font-family:var(--mono);font-size:.62rem;color:#8a5c10;letter-spacing:.06em;line-height:1.7;}
+    .dl-hero-card.dev{opacity:.92;}
+    .dl-hero-card.dev::before{background:linear-gradient(90deg,#e0b050,#f0d9a8,#e0b050);background-size:200% 100%;}
+
+    /* TOOLS CARD (available now) */
+    .dl-hero-card.tools::before{background:linear-gradient(90deg,var(--green-dark),#2ecc71,var(--green-dark));background-size:200% 100%;animation:shimmer 3s linear infinite;}
+    .dl-ver.live{color:#fff;background:var(--green);border-color:var(--green-dark);font-weight:bold;}
+    .dl-sub{font-family:var(--ui);font-weight:600;font-size:.9rem;color:var(--green-dark);letter-spacing:.05em;margin:-2px 0 12px;}
+    .tool-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(190px,100%),1fr));gap:8px 18px;margin-bottom:24px;max-width:560px;min-width:0;}
+    .dl-hero-inner>*{min-width:0;}
+    .tool-item{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;color:#3d6646;line-height:1.5;}
+    .tool-item svg{width:13px;height:13px;flex-shrink:0;margin-top:4px;stroke:var(--green);}
+    .tool-item strong{font-weight:600;color:#0d1f12;}
+    .hash-box{font-family:var(--mono);font-size:.55rem;color:var(--muted);background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:8px 10px;margin-bottom:22px;max-width:520px;word-break:break-all;line-height:1.7;letter-spacing:.03em;}
+    .hash-box span{color:var(--green-dark);}
 
     /* STANDARDS */
     .standards{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:18px 24px;margin-bottom:40px;display:flex;flex-wrap:wrap;align-items:center;gap:14px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
@@ -299,7 +324,7 @@
           <div class="stat"><div class="stat-num">API</div><div class="stat-label">Browser Bridge</div></div>
           <div class="stat"><div class="stat-num">3D</div><div class="stat-label">Analysis Engine</div></div>
           <div class="stat"><div class="stat-num">NSCP</div><div class="stat-label">Primary Code</div></div>
-          <div class="stat"><div class="stat-num">v2.0</div><div class="stat-label">Current Release</div></div>
+          <div class="stat"><div class="stat-num">TOOLS</div><div class="stat-label">Available Now</div></div>
         </div>
       </div>
       <div class="hero-box-wrap">
@@ -413,7 +438,7 @@
 <section class="dl-section">
   <div class="wrap">
     <div class="section-header">
-      <h2 class="section-title">Download JI-SoEX</h2>
+      <h2 class="section-title">Downloads</h2>
       <div class="section-line"></div>
     </div>
     <div class="standards">
@@ -424,8 +449,8 @@
       </div>
     </div>
 
-    <div class="dl-hero-card">
-      <div class="dl-ver">v2.0 · LATEST</div>
+    <div class="dl-hero-card dev">
+      <div class="dl-ver dev">v2.0 · UNDER DEVELOPMENT</div>
       <div class="dl-hero-inner">
         <div>
           <div class="dl-hero-icon">
@@ -451,6 +476,13 @@
             complete with P-M interaction diagrams, biaxial checks, seismic confinement,
             and color-coded 3D envelope views. Zero manual input from analysis to design.
           </p>
+          <div class="dev-banner">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            <div class="dev-banner-text">
+              <strong>UNDER DEVELOPMENT</strong> — the JI-SoEX suite is being rebuilt and is
+              not available for download at this time. Release date to be announced.
+            </div>
+          </div>
           <div class="dl-tags">
             <span class="tag hi">Browser API</span>
             <span class="tag hi">Result Extractor</span>
@@ -468,21 +500,84 @@
             <div class="meta-item"><div class="meta-label">Interface</div><div class="meta-value">Browser API</div></div>
             <div class="meta-item"><div class="meta-label">Platform</div><div class="meta-value">Windows 10/11</div></div>
             <div class="meta-item"><div class="meta-label">Format</div><div class="meta-value">.exe</div></div>
-            <div class="meta-item"><div class="meta-label">Status</div><div class="meta-value">Stable</div></div>
+            <div class="meta-item"><div class="meta-label">Status</div><div class="meta-value dev">In Development</div></div>
           </div>
         </div>
         <div class="dl-btns">
-          <a class="btn-dl" href="#" title="Download JI-SoEX">
+          <span class="btn-dl disabled" aria-disabled="true" title="Under development — not yet available">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Under Development
+          </span>
+          <div class="btn-note">DOWNLOAD TEMPORARILY DISABLED<br>CHECK BACK FOR THE PUBLIC RELEASE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JI-SoEX TOOLS -->
+    <div class="dl-hero-card tools">
+      <div class="dl-ver live">v0.1.16 · AVAILABLE NOW</div>
+      <div class="dl-hero-inner">
+        <div>
+          <div class="dl-hero-icon">
+            <!-- Wrench / automation icon -->
+            <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.5 4.5a5.5 5.5 0 00-7.1 6.8L4.6 19.1a2.2 2.2 0 003.1 3.1l7.8-7.8a5.5 5.5 0 006.8-7.1l-3.2 3.2-3.1-.6-.6-3.1 3.1-3.3z" stroke="#1a9a4a" stroke-width="1.5" stroke-linejoin="round"/>
+              <circle cx="6.4" cy="20.4" r="1.1" fill="#2ecc71"/>
+            </svg>
+          </div>
+          <div class="dl-name">JI-SoEX Tools</div>
+          <div class="dl-sub">STAAD.Pro Modelling &amp; Automation Toolkit</div>
+          <div class="dl-id">// JRB-ISTRUCT · OPENSTAAD AUTOMATION LAUNCHER · v0.1.16</div>
+          <p class="dl-desc">
+            A standalone Windows desktop app that drives STAAD.Pro directly through the
+            OpenSTAAD COM bridge. Build frame grids, assign materials and properties, apply
+            supports and specifications, generate NSCP 2015 load combinations, run the
+            analysis, and design footings — all from one panel, without clicking through
+            STAAD dialogs. Open your model, hit <code>Connect</code>, and go.
+          </p>
+          <div class="tool-list">
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Frame</strong> — X/Z bay grid with Y levels</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Materials</strong> — 21/28 MPa, slab, shearwall</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Properties</strong> — sections + cracked factors</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Specifications</strong> — offsets, releases, diaphragms</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Supports &amp; Groups</strong> — fixed/pinned, floor groups</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Load Combinations</strong> — NSCP 2015 generator</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Load Generation</strong> — response spectra</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Footing Design</strong> — full RC design + report</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Select Tools</strong> — node/member selection helpers</div></div>
+            <div class="tool-item"><svg viewBox="0 0 20 20" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg><div><strong>Run Analysis</strong> — submit straight from the app</div></div>
+          </div>
+          <div class="dl-tags">
+            <span class="tag hi">OpenSTAAD Bridge</span>
+            <span class="tag hi">STAAD.Pro Automation</span>
+            <span class="tag hi">NSCP 2015 Combos</span>
+            <span class="tag hi">Footing Design</span>
+            <span class="tag">Frame Generator</span><span class="tag">Materials</span>
+            <span class="tag">Properties</span><span class="tag">Specifications</span>
+            <span class="tag">Response Spectra</span><span class="tag">Desktop App</span>
+          </div>
+          <div class="dl-meta">
+            <div class="meta-item"><div class="meta-label">Version</div><div class="meta-value">v0.1.16</div></div>
+            <div class="meta-item"><div class="meta-label">Interface</div><div class="meta-value">Desktop App</div></div>
+            <div class="meta-item"><div class="meta-label">Platform</div><div class="meta-value">Windows 10/11 · x64</div></div>
+            <div class="meta-item"><div class="meta-label">Size</div><div class="meta-value">22.3 MB</div></div>
+            <div class="meta-item"><div class="meta-label">Requires</div><div class="meta-value">STAAD.Pro</div></div>
+            <div class="meta-item"><div class="meta-label">Status</div><div class="meta-value">Released</div></div>
+          </div>
+          <div class="hash-box">
+            SHA-256 · JI-SoEX-Tools-Setup-0.1.16.exe<br>
+            <span>3865AB5A519F6E8B35373E395C9C2362985AE77DB5E3F425C78249DBAF27FE2B</span>
+          </div>
+        </div>
+        <div class="dl-btns">
+          <a class="btn-dl" href="https://github.com/jonelphysique-tech/JI-SoEX-Page/releases/latest/download/JI-SoEX-Tools-Setup-0.1.16.exe" title="Download JI-SoEX Tools installer">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download (.exe)
+            Download Installer
           </a>
-          <a class="btn-dl secondary" href="#" title="Release Notes">
+          <div class="btn-note">JI-SoEX-Tools-Setup-0.1.16.exe<br>WINDOWS INSTALLER · 22.3 MB</div>
+          <a class="btn-dl secondary" href="https://github.com/jonelphysique-tech/JI-SoEX-Page/releases/latest" title="All releases and notes">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             Release Notes
-          </a>
-          <a class="btn-dl secondary" href="#" title="User Manual">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            User Manual
           </a>
         </div>
       </div>
@@ -570,14 +665,14 @@
 
     <!-- INSTALL -->
     <div class="section-header">
-      <h2 class="section-title">Installation Guide</h2>
+      <h2 class="section-title">Installation Guide — JI-SoEX Tools</h2>
       <div class="section-line"></div>
     </div>
     <div class="steps">
-      <div class="step"><div class="step-num">01</div><div class="step-title">Download JI-SoEX</div><p class="step-desc">Download <code>JI-SoEX.exe</code> above. Fully portable — no installer or dependencies required.</p></div>
-      <div class="step"><div class="step-num">02</div><div class="step-title">Open Your Analysis Model</div><p class="step-desc">Run your structural analysis in your existing software and export the model to the local <code>index.html</code> browser output.</p></div>
-      <div class="step"><div class="step-num">03</div><div class="step-title">Connect via API</div><p class="step-desc">Launch <code>JI-SoEX.exe</code> and click <code>Connect</code>. The app bridges to the browser engine and reads all model data automatically.</p></div>
-      <div class="step"><div class="step-num">04</div><div class="step-title">Extract & Design</div><p class="step-desc">Click <code>Extract</code> to pull member forces, then open Column / Beam / Footing design panels for instant RC code checks and reports.</p></div>
+      <div class="step"><div class="step-num">01</div><div class="step-title">Download the Installer</div><p class="step-desc">Download <code>JI-SoEX-Tools-Setup-0.1.16.exe</code> above and run it. Installs per-user — no administrator rights required.</p></div>
+      <div class="step"><div class="step-num">02</div><div class="step-title">Activate Your License</div><p class="step-desc">Launch <code>JI-SoEX Tools</code>, copy the <code>PC ID</code> shown on the License panel, and send it to JRB-iStruct to receive your activation key.</p></div>
+      <div class="step"><div class="step-num">03</div><div class="step-title">Open Your STAAD Model</div><p class="step-desc">Start <code>STAAD.Pro</code> with your model open, then click <code>Connect</code> in JI-SoEX Tools to bridge through OpenSTAAD.</p></div>
+      <div class="step"><div class="step-num">04</div><div class="step-title">Build & Automate</div><p class="step-desc">Use the <code>Frame</code>, <code>Mats</code>, <code>Props</code>, <code>Spec</code>, <code>Loads</code>, and <code>Design</code> panels to build and run the model directly from the app.</p></div>
     </div>
   </div>
 </section>

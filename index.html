@@ -225,10 +225,24 @@
     .cta-band .btn:hover{background:var(--green-lite);color:var(--green-dark);transform:translateY(-1px);}
 
     /* SUITE PREVIEW (dimmed / roadmap) */
-    .suite-note{display:inline-flex;align-items:center;gap:9px;background:var(--amber-lite);border:1px solid var(--amber-mid);border-radius:3px;padding:5px 14px;font-family:var(--mono);font-size:.6rem;color:var(--amber);letter-spacing:.1em;margin:0 0 26px 18px;}
-    .suite-box{text-align:center;margin-bottom:30px;}
-    .suite-box img{width:100%;max-width:420px;height:auto;display:block;margin:0 auto;filter:drop-shadow(0 14px 34px rgba(26,154,74,.16));}
-    .suite-box figcaption{font-family:var(--mono);font-size:.56rem;color:var(--muted);letter-spacing:.09em;margin-top:10px;}
+    .dl-box{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-bottom:2px;}
+    .dl-box img{width:100%;height:auto;display:block;}
+    /* ROADMAP PRODUCT GRID */
+    .roadmap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px;margin-bottom:56px;}
+    .prod{background:var(--panel);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,.04);transition:transform .2s,box-shadow .25s,border-color .25s;position:relative;}
+    .prod:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(26,154,74,.14);border-color:var(--green-dim);}
+    .prod-shot{background:#fff;padding:6px 6px 0;}
+    .prod-shot img{width:100%;height:auto;display:block;}
+    .prod-body{padding:4px 20px 22px;display:flex;flex-direction:column;flex:1;}
+    .prod-name{font-family:var(--ui);font-weight:700;font-size:1.22rem;color:#0d1f12;letter-spacing:.03em;margin-bottom:3px;}
+    .prod-kind{font-family:var(--mono);font-size:.55rem;color:var(--green-dark);letter-spacing:.1em;text-transform:uppercase;margin-bottom:11px;line-height:1.6;}
+    .prod-desc{font-size:.83rem;color:var(--muted);line-height:1.62;margin-bottom:16px;}
+    .prod-status{margin-top:auto;font-family:var(--mono);font-size:.55rem;letter-spacing:.11em;padding:4px 11px;border-radius:2px;align-self:flex-start;background:var(--amber-lite);border:1px solid var(--amber-mid);color:var(--amber);}
+    .prod-status.live{background:var(--green-lite);border-color:var(--green-mid);color:var(--green-dark);}
+
+    .suite-sub{font-family:var(--ui);font-weight:700;font-size:1rem;color:#0d1f12;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:12px;}
+    .suite-sub::after{content:'';flex:1;height:1px;background:var(--border);}
+    .suite-sub-lede{font-size:.9rem;color:var(--muted);line-height:1.7;max-width:660px;margin-bottom:28px;}
     .api-callout{background:linear-gradient(135deg,#f0fdf5,#e8f8ef);border:1.5px solid var(--green-mid);border-left:4px solid var(--green);border-radius:8px;padding:26px 30px;margin-bottom:30px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;box-shadow:0 4px 20px rgba(26,154,74,.1);}
     .api-callout-icon{width:52px;height:52px;background:#fff;border:1px solid var(--green-mid);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(26,154,74,.12);}
     .api-callout-icon svg{width:28px;height:28px;}
@@ -297,7 +311,7 @@
       <a href="#modules">Modules</a>
       <a href="#screenshots">Screenshots</a>
       <a href="#pricing">Pricing</a>
-      <a href="#suite">JI-SoEX Suite</a>
+      <a href="#suite">Coming Next</a>
       <a class="nav-cta" href="#download">Download</a>
     </div>
   </div>
@@ -609,6 +623,9 @@
           </div>
         </div>
         <div class="dl-btns">
+          <div class="dl-box">
+            <img src="assets/box-tools.webp" alt="JI-SoEX Tools product box — STAAD.Pro Automation and Productivity Suite" width="860" height="720" loading="lazy" decoding="async">
+          </div>
           <a class="btn" href="https://github.com/jonelphysique-tech/JI-SoEX-Page/releases/latest/download/JI-SoEX-Tools-Setup-0.1.16.exe">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download Installer
@@ -755,15 +772,68 @@
 <section id="suite">
   <div class="wrap">
     <div class="section-header">
-      <h2 class="section-title">Coming Next — JI-SoEX Suite</h2>
+      <h2 class="section-title">Coming Next from JRB-iStruct</h2>
       <div class="section-line"></div>
     </div>
-    <div class="suite-note">IN DEVELOPMENT · NOT YET AVAILABLE FOR DOWNLOAD</div>
+    <p class="section-lede">
+      The JRB-iStruct roadmap. Each of these is in active development — none are available
+      for download yet. Message us if you want to be told when one ships.
+    </p>
 
-    <figure class="suite-box">
-      <img src="assets/suite-hero.webp" alt="JI-SoEX Structural Design Suite product box showing a 3D analysis model" width="1370" height="768" loading="lazy" decoding="async">
-      <figcaption>JI-SoEX · STRUCTURAL DESIGN SUITE · POWERED BY JRB-ISTRUCT ENGINEERING</figcaption>
-    </figure>
+    <div class="roadmap">
+      <div class="prod">
+        <div class="prod-shot">
+          <img src="assets/box-bridge.webp" alt="JI-Bridge product box — Integrated Bridge and Flat Slab Design Suite" width="860" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">JI-Bridge</div>
+          <div class="prod-kind">Integrated Bridge &amp;<br>Flat Slab Design Suite</div>
+          <p class="prod-desc">Complete flat slab bridge design — superstructures, abutments, piers, and foundations in one workflow.</p>
+          <div class="prod-status">IN DEVELOPMENT</div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-shot">
+          <img src="assets/box-hostru.webp" alt="JI-HoStru product box — Horizontal Structures Design and Analysis Suite" width="860" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">JI-HoStru</div>
+          <div class="prod-kind">Horizontal Structures<br>Design &amp; Analysis Suite</div>
+          <p class="prod-desc">Earth retaining systems, ground improvement, and pavements — slope protection walls, L / reverse-L walls, and gabions.</p>
+          <div class="prod-status">IN DEVELOPMENT</div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-shot">
+          <img src="assets/box-wind.webp" alt="JI-Wind product box — MWFRS Wind Load Analysis Software" width="860" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">JI-Wind</div>
+          <div class="prod-kind">MWFRS Wind Load<br>Analysis Studio</div>
+          <p class="prod-desc">Wind load analysis using the ASCE 7 directional procedure (MWFRS), to NSCP 2015 / 2010.</p>
+          <div class="prod-status">IN DEVELOPMENT</div>
+        </div>
+      </div>
+
+      <div class="prod">
+        <div class="prod-shot">
+          <img src="assets/box-soex.webp" alt="JI-SoEX product box — Structural Design Suite showing a 3D analysis model" width="860" height="720" loading="lazy" decoding="async">
+        </div>
+        <div class="prod-body">
+          <div class="prod-name">JI-SoEX</div>
+          <div class="prod-kind">Structural Result Extractor<br>&amp; Design Suite</div>
+          <p class="prod-desc">RC column, beam, and footing design driven by results pulled straight from your analysis model. Detailed below.</p>
+          <div class="prod-status">IN DEVELOPMENT</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="suite-sub">JI-SoEX Suite — in detail</div>
+    <p class="suite-sub-lede">
+      The furthest along of the four. Here is how it works and what it produces.
+    </p>
 
     <div class="api-callout">
       <div class="api-callout-icon">
@@ -876,7 +946,7 @@
           <li><a href="#screenshots">Screenshots</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#requirements">Requirements</a></li>
-          <li><a href="#suite">JI-SoEX Suite</a></li>
+          <li><a href="#suite">Coming next</a></li>
         </ul>
       </div>
       <div>
